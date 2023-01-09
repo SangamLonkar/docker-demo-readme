@@ -13,7 +13,7 @@ docker exec -it con1 /bin/sh
 
 ## Exercise 1: Create New Bridge Network
 
-### Example 1: Create Bridge
+### Scenario 1: Create Bridge
 ```bash
 docker network create --driver bridge tcsbridge
 docker container run -dt --name con3 --network tcsbridge alpine
@@ -21,12 +21,12 @@ docker container run -dt --name con4 --network tcsbridge alpine
 docker exec -it con4 /bin/sh
 ```
 
-### Example 2: Create Bridge
+### Scenario 2: Create Bridge with subnet
 ```bash
 docker network create --driver bridge --subnet 172.43.0.0/16 tcsbridge1
 ```
 
-### Example 3: Attached and detached networks on the fly
+### Scenario 3: Attached and detached networks on the fly
 ```bash
 docker network connect tcsbridge1 con1
 ```
